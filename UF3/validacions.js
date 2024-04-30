@@ -102,10 +102,11 @@ document.getElementById("form").addEventListener("submit", function (event) {
 
   //-----------------------------------------------------------
 
-  // if (!product) {
-  //   alert("Has de seleccionar un producte!");
-  //   return;
-  // }
+  // Validem que es seleccioni un producte
+  if (!product) {
+    alert("Has de seleccionar un producte!");
+    return;
+  }
 
   // Validem la quantitat
   if (!Number.isInteger(quantity) || quantity < 1 || quantity > 10) {
