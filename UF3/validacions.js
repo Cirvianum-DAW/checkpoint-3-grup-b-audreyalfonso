@@ -42,22 +42,35 @@ document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
 
   // Agafem les dades del formulari
-  // Agafem les dades del formulari
   const name = document.getElementById("name").value;
   const surname = document.getElementById("surname").value;
   const email = document.getElementById("email").value;
   const age = document.getElementById("age").value;
+  const message = document.getElementById("message").value;
+  const gender = document.getElementById("gender").value;
 
-  // Validem el nom
+  // Validem els caràcters del nom
   if (name.length < 3 || name.length > 50) {
     alert("El nom ha de tenir entre 3 i 50 caràcters!");
     return;
   }
 
-  // Validem el cognom
+  // Validem que el nom no contingui números
+  const nameRegex = /[0-9]/;
+  if (nameRegex.test(name)) {
+    alert("El nom no pot contenir números!");
+  }
+
+  // Validem els caràcters del cognom
   if (surname.length < 3 || surname.length > 50) {
     alert("El cognom ha de tenir entre 3 i 50 caràcters!");
     return;
+  }
+
+  // Validem que el nom no contingui números
+  const surnameRegex = /[0-9]/;
+  if (surnameRegex.test(surname)) {
+    alert("El cognom no pot contenir números!");
   }
 
   // Validem el correu
@@ -66,6 +79,23 @@ document.getElementById("form").addEventListener("submit", function (event) {
     alert("L'adreça de correu electrònic no és vàlid");
   }
 
+  //-----------------------------------------------------------
+
+  // Validem que el gènere és una de les opcions disponibles al formulari
+  if (!gender) {
+    alert('Has de seleccionar un gènere!');
+    return;
+}
+
   // Validem l'edat
+  if (age < 18) {
+    alert('Has de ser major d\'edat per registrar-te');
+  }
+
+  //Validem el camp "Message"
+  if (message.length < 10 || message.length > 200) {
+    alert("El missatge ha de tenir entre 10 i 200 caràcters!");
+    return;
+  }
   
 });
