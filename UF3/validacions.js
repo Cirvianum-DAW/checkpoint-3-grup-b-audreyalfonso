@@ -48,6 +48,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   const age = document.getElementById("age").value;
   const message = document.getElementById("message").value;
   const gender = document.getElementById("gender").value;
+  const product = document.getElementById("product").value;
 
   // Validem els caràcters del nom
   if (name.length < 3 || name.length > 50) {
@@ -83,13 +84,13 @@ document.getElementById("form").addEventListener("submit", function (event) {
 
   // Validem que el gènere és una de les opcions disponibles al formulari
   if (!gender) {
-    alert('Has de seleccionar un gènere!');
+    alert("Has de seleccionar un gènere!");
     return;
-}
+  }
 
   // Validem l'edat
   if (age < 18) {
-    alert('Has de ser major d\'edat per registrar-te');
+    alert("Has de ser major d'edat per registrar-te");
   }
 
   //Validem el camp "Message"
@@ -97,5 +98,12 @@ document.getElementById("form").addEventListener("submit", function (event) {
     alert("El missatge ha de tenir entre 10 i 200 caràcters!");
     return;
   }
-  
+
+  //-----------------------------------------------------------
+  if (!product) {
+    alert("Has de seleccionar un producte!");
+    return;
+  }
+
+
 });
