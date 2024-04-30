@@ -2,6 +2,9 @@
 
 // Selecció dels inputs...
 const nameInput = document.querySelector('input[name="name"]');
+const surnameInput = document.querySelector('input[surname="surname"]');
+
+document.addEventListener('submit')
 
 // Si no saps com utilitzar aquestes funcions, pots fer ús de missatges per consol o situar
 // els errors allà on consideris lògic
