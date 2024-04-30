@@ -10,3 +10,11 @@ const products = [
   { category: "Llar", price: 79.99, name: "Torradora" },
   { category: "Llar", price: 199.99, name: "Aspiradora" },
 ];
+
+const selectProducts = document.querySelector('#product');
+
+selectProducts.addEventListener('change', (event) => {
+  products.textContent = `${products.name}`;
+});
+
+

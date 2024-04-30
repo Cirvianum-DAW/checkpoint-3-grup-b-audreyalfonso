@@ -49,6 +49,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   const message = document.getElementById("message").value;
   const gender = document.getElementById("gender").value;
   const product = document.getElementById("product").value;
+  const quantity = document.getElementById("quantity").value;
 
   // Validem els caràcters del nom
   if (name.length < 3 || name.length > 50) {
@@ -100,10 +101,15 @@ document.getElementById("form").addEventListener("submit", function (event) {
   }
 
   //-----------------------------------------------------------
-  if (!product) {
-    alert("Has de seleccionar un producte!");
+
+  // if (!product) {
+  //   alert("Has de seleccionar un producte!");
+  //   return;
+  // }
+
+  // Validem la quantitat
+  if (!Number.isInteger(quantity) || quantity < 1 || quantity > 10) {
+    alert("La quantitat ha de ser un nombre enter entre 1 i 10!");
     return;
   }
-
-
 });
